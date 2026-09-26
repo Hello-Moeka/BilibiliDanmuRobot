@@ -1,5 +1,5 @@
-github.com/Hello-Moeka/BilibiliDanmuRobot-Core v1.1.22 h1:ehwygPyrZO3Tz/Fy0SF/lQitLhzxFnU3giFJpnR4jz4=
-github.com/Hello-Moeka/BilibiliDanmuRobot-Core v1.1.22/go.mod h1:oINzDQWweS7c+GSz/bibvC+GtQ2FYgEMSX8KjhEcH6g=
+github.com/Hello-Moeka/BilibiliDanmuRobot-Core v1.1.23 h1:9DK//+QeAQyOAV/vt5SFYSC440ybobKUZhw/n6P5ZAU=
+github.com/Hello-Moeka/BilibiliDanmuRobot-Core v1.1.23/go.mod h1:oINzDQWweS7c+GSz/bibvC+GtQ2FYgEMSX8KjhEcH6g=
 github.com/andybalholm/brotli v1.0.5 h1:8uQZIdzKmjc/iuPu7O2ioW48L81FgatrcpfFmiq/cCs=
 github.com/andybalholm/brotli v1.0.5/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/avast/retry-go/v4 v4.5.0 h1:QoRAZZ90cj5oni2Lsgl2GW8mNTnUCnmpx/iKpwVisHg=
@@ -153,10 +153,6 @@ github.com/wailsapp/mimetype v1.4.1 h1:pQN9ycO7uo4vsUUuPeHEYoUkLVkaRntMnHJxVwYhw
 github.com/wailsapp/mimetype v1.4.1/go.mod h1:9aV5k31bBOv5z6u+QP8TltzvNGJPmNJD4XlAL3U+j3o=
 github.com/wailsapp/wails/v2 v2.10.1 h1:QWHvWMXII2nI/nXz77gpPG8P3ehl6zKe+u4su5BWIns=
 github.com/wailsapp/wails/v2 v2.10.1/go.mod h1:zrebnFV6MQf9kx8HI4iAv63vsR5v67oS7GTEZ7Pz1TY=
-github.com/xbclub/BilibiliDanmuRobot-Core v1.1.20 h1:zegG4M3EXA9ssWf2JEGcshIhAYFQX03gx/8M20qmoZk=
-github.com/xbclub/BilibiliDanmuRobot-Core v1.1.20/go.mod h1:Oo0Ac1KHFW06OXeaVLrlzBBq8wvMAYbNAjTItTB4Qos=
-github.com/xbclub/BilibiliDanmuRobot-Core v1.1.21 h1:54bWypBUEEzPda1SIM0ElY6NAvfYsG9xeFeEVIcScY4=
-github.com/xbclub/BilibiliDanmuRobot-Core v1.1.21/go.mod h1:Oo0Ac1KHFW06OXeaVLrlzBBq8wvMAYbNAjTItTB4Qos=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 github.com/zeromicro/go-zero v1.6.5 h1:JgsBa25/knnEL7+KQksbwktudIkNQvaAin0nisVgnSA=
 github.com/zeromicro/go-zero v1.6.5/go.mod h1:XjbssEVEzFKueAh0Fie5kNf+cRqFlQQk46fY9WgEGaM=
