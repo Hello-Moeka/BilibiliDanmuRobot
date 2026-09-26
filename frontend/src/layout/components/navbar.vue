@@ -7,11 +7,9 @@ import Breadcrumb from "./sidebar/breadCrumb.vue";
 import topCollapse from "./sidebar/topCollapse.vue";
 // import LogoutCircleRLine from "@iconify-icons/ri/logout-circle-r-line";
 import Setting from "@iconify-icons/ri/settings-3-line";
-import { onMounted, reactive, ref } from "vue";
-import MarkdownIt from "markdown-it";
+import { onMounted, reactive } from "vue";
 import {
-  CheckUpdate,
-  GetloginStatus, GetUpdateUpgrader,
+  GetloginStatus,
   GetUserInfo,
   GetVersion,
   ReadConfig
@@ -30,14 +28,7 @@ const {
   toggleSideBar
 } = useNav();
 const data = reactive({
-  dialogVisible: false,
   version: "v1.0.0",
-  updateloading: false,
-  updateinfo: {
-    Code: 0,
-    Msg: "",
-    Content: ""
-  },
   islogin: false,
   username: "",
   avatars: "https://avatars.githubusercontent.com/u/44761321?v=4",
@@ -89,39 +80,6 @@ const data = reactive({
     ]
   }
 });
-function updateit() {
-  data.updateloading = true;
-  GetUpdateUpgrader().then(res => {
-    ElNotification({
-      title: "更新器下载中",
-      message: "更新器下载中",
-      type: "success"
-    });
-  });
-}
-function checkupdates(isbutton?) {
-  CheckUpdate().then(res => {
-    data.updateinfo = res;
-    if (isbutton == true) {
-      if (data.updateinfo.Code == 2) {
-        ElNotification({
-          title: "检查更新失败",
-          message: data.updateinfo.Msg,
-          type: "error"
-        });
-      } else {
-        data.dialogVisible = true;
-        ElNotification({
-          title: "检查更新成功",
-          message: data.updateinfo.Msg,
-          type: "success"
-        });
-      }
-    }
-
-  });
-}
-const markdown = new MarkdownIt();
 onMounted(() => {
   getuserinfo();
   GetVersion().then(res => {
@@ -131,7 +89,6 @@ onMounted(() => {
     Monitor().then(res => {
       data.isrunning = res;
     });
-    checkupdates();
     // console.log(data.isrunning)
   }, 5000);
   setInterval(() => {
@@ -246,27 +203,11 @@ function sleep(ms) {
     <div v-if="layout === 'vertical'" class="vertical-header-right">
       <el-button size="small" type="warning" plain @click="restart">重启</el-button>
 <!--      <el-button size="small" type="success" @click="pgstart" plain  v-if="data.isrunning==false">启动</el-button>-->
-      <el-button size="small" type="primary" @click="checkupdates(true)" plain>更新</el-button>
-
       <span class="set-icon navbar-bg-hover" title="打开项目配置" @click="onPanel">
         <IconifyIconOffline :icon="Setting" />
       </span>
     </div>
   </div>
-  <el-dialog v-model="data.dialogVisible" title="检查更新" width="50%">
-    <span>当前版本：{{ data.version }}</span><br />
-    <span>最新版本：{{ data.updateinfo.Code == 1 ? data.updateinfo.Msg : data.version }}</span><br>
-    <div v-html="markdown.render(data.updateinfo.Content)"></div>
-
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="data.dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" :loading=data.updateloading @click="updateit">
-          立即更新
-        </el-button>
-      </span>
-    </template>
-  </el-dialog>
 </template>
 
 <style lang="scss" scoped>
